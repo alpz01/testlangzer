@@ -82,7 +82,6 @@ function extractPostData(post) {
 function populateSearchResults({ title, ratings, imageLink, ep, url }) {
   const searchResultsContainer = document.querySelector('.searchresult');
   const episodeInfo = ep ? `EP ${ep}` : '';
-  const sanitizedTitle = title.toLowerCase().split(' ').join('-');
   const listItemHTML = `
     <li>
       <a href="${url}" title="${title}">
@@ -185,18 +184,36 @@ async function logPosts() {
   postData.forEach(post => {
     const title = post.title;
     const url = post.url;
+    const content = post.content;
     const postGenres = post.labels.filter(label => genres.includes(label)).join(", ");
-    addPostItem(title, url, postGenres);
+    let imageLink = "";
+
+    // Extract image link from content
+    const separatorIndex = content.indexOf('<div');
+    if (separatorIndex !== -1) {
+      const imgIndex = content.indexOf('<img', separatorIndex);
+      if (imgIndex !== -1) {
+        const srcIndex = content.indexOf('src="', imgIndex);
+        if (srcIndex !== -1) {
+          const endSrcIndex = content.indexOf('"', srcIndex + 5);
+          if (endSrcIndex !== -1) {
+            imageLink = content.substring(srcIndex + 5, endSrcIndex);
+          }
+        }
+      }
+    }
+
+    addPostItem(title, url, postGenres, imageLink);
   });
 }
 
-function addPostItem(title, url, genres) {
+function addPostItem(title, url, genres, image) {
   const postItem = `<div id="featuredbgcont">
-    <img id="featuredbg" src="images/605592.png">
+    <img id="featuredbg" src="${image}">
   </div>
   <div id="featuredcont">
     <a href="${url}">
-        <img id="featuredimg" src="images/605592.png">
+        <img id="featuredimg" src="${image}">
     </a>
     <div id="featuredtitle">
         <a href="${url}">${title}</a>
