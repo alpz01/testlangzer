@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="post-main.js" async></script>
+</head>
+
+<body>
+    <div class="playerpage" style="background-color: rgb(35, 35, 35);">
+        <div class="subpart eptitle">
+            <div id="eptitle"><span id="eptitleplace">EP 35</span><span class="altsourcenotif">Internal Player</span>
+            </div>
+            <div id="toprightplayer">
+                <i onclick="switchToLive();" class="proxybtn glyphicon fa-solid fa-right-left"
+                    style="color: white;"><span class="tooltiptext">Switch</span></i> <i onclick="lighttoggle();"
+                    class="lightbtn glyphicon fa-solid fa-lightbulb"><span class="tooltiptext">Lights</span></i>
+                <i onclick="download();" class="dlbutton glyphicon fa-solid fa-download"><span
+                        class="tooltiptext">Download</span></i>
+                <i onclick="toggleautoplay();" class="autoplaybutton glyphicon fa-solid fa-bolt"><span
+                        class="tooltiptext">Autoplay</span></i> <i onclick="" id="nextbtn"
+                    class="glyphicon fa-solid fa-forward" style="color: gray; cursor: default;"><span
+                        class="tooltiptext">Next ep</span></i>
+            </div>
+        </div>
+        <div id="loadcontainer2" style="display: none; overflow: hidden;">
+            <div class="loadindicator"></div>
+        </div>
+        <div id="iframecontainer">
+            <iframe id="iframeplayer" allowfullscreen="true" scrolling="no" src="" style="min-height: 0px;"></iframe>
+        </div>
+        <select id="srcselect" onchange="srcChange()" style="display: none;"></select>
+        <div id="lowerplayerpage">
+            <div id="aligncenter">
+                <div id="streamtypecontainer">
+                    <div id="streamtype">GOGO Stream</div>
+                    <div id="showrecomendbtn" onclick="showrecomendmenu();" style="display: inline-block;"><i
+                            class="glyphicon fa-solid fa-gear"></i> <span id="changetext">Change</span>
+                    </div>
+                    <div id="sharebtn"><i class="glyphicon glyphicon-share-alt"></i> <span id="shareText"
+                            style="display: inline;">Share</span></div>
+                    <div id="openreport" onclick="reportError()" style="display: block;"><i
+                            class="glyphicon fa-solid fa-circle-exclamation"></i> <span class="reportText">Report</span>
+                    </div>
+                    <div id="reloadbtn" style="display: block;"><i class="glyphicon fa-solid fa-rotate-right"></i> <span
+                            class="reportText">Reload</span></div>
+                    <div id="widescreenbtn"><i class="glyphicon fa-solid fa-expand"></i></div>
+                </div>
+                <a id="animebtn" href="/anime/26370" style="display: inline;"><svg stroke="currentColor" fill="none"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="25" width="25" id="foldersvg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z">
+                        </path>
+                    </svg></a>
+                <span class="animetitle">Anime Title</span><button id="trackbtn" onclick="startTrack();"><i
+                        class="glyphicon glyphicon-plus"></i> Watchlist</button> <button id="followbtn"
+                    onclick="followtoggle();"><i class="glyphicon glyphicon-bell"></i> Follow</button> <br>
+                <div id="animeimage"></div>
+                <span id="notice" style="display: none;"><br><br><br>Try clear cache &amp; make sure your browser
+                    extension not block javascript<br><br><br></span>
+            </div>
+            <div id="epslistplace" style="display: grid;"><button class="playbutton btn btn-primary"
+                    onclick="openiframe(this,1)">1</button></div>
+            <div id="flexbottom" style="display: flex;">
+                <div id="bottomleft">
+                    <span id="genres"></span>
+                    <br>
+                    <span id="status">Status : Completed</span>
+                    <span id="animeinfobottom" style="display: block;"><a id="animebtn2" href="/anime/26370">More
+                            info</a></span>
+                </div>
+                <div class="epsavailable">
+                    Ep total : <span id="epsavailable">35</span> <a onclick="updatecheck()" id="updatebtn"><i
+                            class="glyphicon glyphicon-refresh"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="flexstreambottom">
+        <div style="flex:1">
+            <div id="disquscommentnew" style="display: block;">
+                <button id="showcommentbtn" onclick="showcomment()">Show Comments</button>
+                <div id="disqus_thread"></div>
+            </div>
+            <div id="belowcomment"></div>
+        </div>
+        <div id="streambottomright"></div>
+    </div>
+</body>
+
+</html>

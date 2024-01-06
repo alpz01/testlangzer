@@ -1,0 +1,559 @@
+<div class="rightside" id="rightsidee">
+    <div class="rightcard">
+        <div class="loadingreplacement" style="display: none;">Loading...</div>
+        <div class="usercard" style="display: block;">
+            <div id="userpanel">
+                <span class="usernameplace"></span><span id="premiumcrown"></span><br><br>
+                <div id="iconmenu">
+                    <a class="linkpersonal glyphicon glyphicon-th-list" href=""><br><span
+                            class="subtextmenuicon">User Panel</span></a>
+                    <i class="autotrackbtn glyphicon glyphicon-refresh"
+                        onclick="autotrackbtnclick();"><br><span
+                            class="subtextmenuicon">Autotracking</span></i>
+                    <i class="glyphicon glyphicon-off" onclick="logout();"><br><span
+                            class="subtextmenuicon">Logout</span></i>
+                </div>
+                <div id="logoutmsg"></div>
+            </div>
+            <div id="loginform" style="display: block;">
+                <div class="flexrightcard">
+                    <div class="halfleft">
+                        <input class="logininput" placeholder="Username" id="username" type="text"
+                            autocomplete="username">
+                        <input class="logininput" placeholder="Password" id="password" type="password"
+                            autocomplete="current-password">
+                        <input type="checkbox" value="" id="rememberme" checked="">
+                        <label class="form-check-label rememberlabel" for="rememberme">
+                            Remember me
+                        </label>
+                    </div>
+                    <div class="halfright">
+                        <div class="loginbtn" onclick="login();">Login</div>
+                        <a class="openregisterbtn" onclick="openregister();">Register</a>
+                    </div>
+                </div>
+                <div id="statuslogin"></div>
+            </div>
+            <form id="registerform">
+                <a class="openloginbtn" onclick="backlogin();">&lt; back</a><br><br>
+                <span id="alretinfo">Note: we don't use email (no reset password), please use password
+                    manager so you not forget</span>
+                <div id="formregister">
+                    <input class="logininput" placeholder="Username" id="usernameregis" type="text"
+                        autocomplete="off">
+                    <div class="formsubtext">letters/numbers/_.-| max 25 chars</div>
+                    <input class="logininput" placeholder="Password" id="passwordregis" type="password"
+                        autocomplete="off">
+                    <div class="formsubtext">any 4 - 200 chars</div>
+                    <input class="logininput" placeholder="Confirm Password" id="confirm" type="password"
+                        autocomplete="off">
+                    <div class="formsubtext">retype password</div>
+                    <div class="g-recaptcha" data-theme="dark"
+                        data-sitekey="6LdyotYjAAAAAGg2NNTePg3ocVVY6Xpd1jne5F5o"></div>
+                </div>
+                <div id="statusregister"></div>
+                <div class="registerbtn" onclick="register();">Register</div>
+            </form>
+        </div>
+    </div>
+    <div class="rightcard signinhome" id="gsignsection" style="display: block;">
+        <div class="subtitleright" style="border-bottom:none"></div>
+        <div id="gconnectbtn"><img id="gconnectbtnimg" onclick="connectGoogle()"
+                src="/assets/imgs/gsign.jpg"></div>
+    </div>
+    <div class="rightcard mobilemenureplace">
+        <a class="topmenubtn" onclick="showschedulemenu()"><i
+                class="glyphicon glyphicon-time"></i>Schedule</a>
+        <a class="topmenubtn" title="Random anime" href="/random"><i
+                class="glyphicon glyphicon-random"></i>Random</a>
+        <a class="topmenubtn" title="A-Z List" href="/list">A-Z List</a>
+    </div>
+    <div class="rightcard">
+        <div class="flexrightcard" id="seasonfilter">
+            <div id="seasonleft">
+                <label for="seasonselect">Season:</label>
+                <select id="seasonselect">
+                    <option value="Winter">Winter</option>
+                    <option value="Spring">Spring</option>
+                    <option value="Summer">Summer</option>
+                    <option value="Fall">Fall</option>
+                </select>
+            </div>
+            <div id="yearright">
+                <label for="yearselect">Year:</label>
+                <select id="yearselect">
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990">1990</option>
+                    <option value="1989">1989</option>
+                    <option value="1988">1988</option>
+                    <option value="1987">1987</option>
+                    <option value="1986">1986</option>
+                    <option value="1985">1985</option>
+                    <option value="1984">1984</option>
+                    <option value="1983">1983</option>
+                    <option value="1982">1982</option>
+                    <option value="1981">1981</option>
+                    <option value="1980">1980</option>
+                </select>
+            </div>
+            <div style="flex:1">
+                <div id="seasonalgobtn" onclick="seasonGo()">GO</div>
+            </div>
+        </div>
+    </div>
+    <div class="rightcard">
+        <div class="subtitleright">Genres</div>
+        <div class="flexrightcard" id="genreplace" style="visibility: visible;">
+            <div class="genresgrid form-check">
+                <div><input class="form-check-input" type="checkbox" id="gen-Action" value="Action">
+                    <label class="form-check-label" for="gen-Action">Action</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-AdultCast" value="Adult Cast">
+                    <label class="form-check-label" for="gen-AdultCast">Adult Cast</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Adventure" value="Adventure">
+                    <label class="form-check-label" for="gen-Adventure">Adventure</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Anthropomorphic"
+                        value="Anthropomorphic">
+                    <label class="form-check-label" for="gen-Anthropomorphic">Anthropomorphic</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-AvantGarde"
+                        value="Avant Garde">
+                    <label class="form-check-label" for="gen-AvantGarde">Avant Garde</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-AwardWinning"
+                        value="Award Winning">
+                    <label class="form-check-label" for="gen-AwardWinning">Award Winning</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Cgdct" value="Cgdct">
+                    <label class="form-check-label" for="gen-Cgdct">Cgdct</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Childcare" value="Childcare">
+                    <label class="form-check-label" for="gen-Childcare">Childcare</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-CombatSports"
+                        value="Combat Sports">
+                    <label class="form-check-label" for="gen-CombatSports">Combat Sports</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Comedy" value="Comedy">
+                    <label class="form-check-label" for="gen-Comedy">Comedy</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Crossdressing"
+                        value="Crossdressing">
+                    <label class="form-check-label" for="gen-Crossdressing">Crossdressing</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Delinquents"
+                        value="Delinquents">
+                    <label class="form-check-label" for="gen-Delinquents">Delinquents</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Detective" value="Detective">
+                    <label class="form-check-label" for="gen-Detective">Detective</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Drama" value="Drama">
+                    <label class="form-check-label" for="gen-Drama">Drama</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Ecchi" value="Ecchi">
+                    <label class="form-check-label" for="gen-Ecchi">Ecchi</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Educational"
+                        value="Educational">
+                    <label class="form-check-label" for="gen-Educational">Educational</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Erotica" value="Erotica">
+                    <label class="form-check-label" for="gen-Erotica">Erotica</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Fantasy" value="Fantasy">
+                    <label class="form-check-label" for="gen-Fantasy">Fantasy</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-GagHumor" value="Gag Humor">
+                    <label class="form-check-label" for="gen-GagHumor">Gag Humor</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Gore" value="Gore">
+                    <label class="form-check-label" for="gen-Gore">Gore</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Gourmet" value="Gourmet">
+                    <label class="form-check-label" for="gen-Gourmet">Gourmet</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Harem" value="Harem">
+                    <label class="form-check-label" for="gen-Harem">Harem</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-HighStakesGame"
+                        value="High Stakes Game">
+                    <label class="form-check-label" for="gen-HighStakesGame">High Stakes Game</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Historical" value="Historical">
+                    <label class="form-check-label" for="gen-Historical">Historical</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Horror" value="Horror">
+                    <label class="form-check-label" for="gen-Horror">Horror</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-IdolsFemale"
+                        value="Idols Female">
+                    <label class="form-check-label" for="gen-IdolsFemale">Idols Female</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-IdolsMale" value="Idols Male">
+                    <label class="form-check-label" for="gen-IdolsMale">Idols Male</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Isekai" value="Isekai">
+                    <label class="form-check-label" for="gen-Isekai">Isekai</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Iyashikei" value="Iyashikei">
+                    <label class="form-check-label" for="gen-Iyashikei">Iyashikei</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Josei" value="Josei">
+                    <label class="form-check-label" for="gen-Josei">Josei</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Kids" value="Kids">
+                    <label class="form-check-label" for="gen-Kids">Kids</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-LovePolygon"
+                        value="Love Polygon">
+                    <label class="form-check-label" for="gen-LovePolygon">Love Polygon</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-MagicalSexShift"
+                        value="Magical Sex Shift">
+                    <label class="form-check-label" for="gen-MagicalSexShift">Magical Sex Shift</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-MahouShoujo"
+                        value="Mahou Shoujo">
+                    <label class="form-check-label" for="gen-MahouShoujo">Mahou Shoujo</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-MartialArts"
+                        value="Martial Arts">
+                    <label class="form-check-label" for="gen-MartialArts">Martial Arts</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Mecha" value="Mecha">
+                    <label class="form-check-label" for="gen-Mecha">Mecha</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Medical" value="Medical">
+                    <label class="form-check-label" for="gen-Medical">Medical</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Military" value="Military">
+                    <label class="form-check-label" for="gen-Military">Military</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Music" value="Music">
+                    <label class="form-check-label" for="gen-Music">Music</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Mystery" value="Mystery">
+                    <label class="form-check-label" for="gen-Mystery">Mystery</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Mythology" value="Mythology">
+                    <label class="form-check-label" for="gen-Mythology">Mythology</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-OrganizedCrime"
+                        value="Organized Crime">
+                    <label class="form-check-label" for="gen-OrganizedCrime">Organized Crime</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-OtakuCulture"
+                        value="Otaku Culture">
+                    <label class="form-check-label" for="gen-OtakuCulture">Otaku Culture</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Parody" value="Parody">
+                    <label class="form-check-label" for="gen-Parody">Parody</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-PerformingArts"
+                        value="Performing Arts">
+                    <label class="form-check-label" for="gen-PerformingArts">Performing Arts</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Pets" value="Pets">
+                    <label class="form-check-label" for="gen-Pets">Pets</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Psychological"
+                        value="Psychological">
+                    <label class="form-check-label" for="gen-Psychological">Psychological</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Racing" value="Racing">
+                    <label class="form-check-label" for="gen-Racing">Racing</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Reincarnation"
+                        value="Reincarnation">
+                    <label class="form-check-label" for="gen-Reincarnation">Reincarnation</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-ReverseHarem"
+                        value="Reverse Harem">
+                    <label class="form-check-label" for="gen-ReverseHarem">Reverse Harem</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Romance" value="Romance">
+                    <label class="form-check-label" for="gen-Romance">Romance</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-RomanticSubtext"
+                        value="Romantic Subtext">
+                    <label class="form-check-label" for="gen-RomanticSubtext">Romantic Subtext</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Samurai" value="Samurai">
+                    <label class="form-check-label" for="gen-Samurai">Samurai</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-School" value="School">
+                    <label class="form-check-label" for="gen-School">School</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Sci-Fi" value="Sci-Fi">
+                    <label class="form-check-label" for="gen-Sci-Fi">Sci-Fi</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Shoujo" value="Shoujo">
+                    <label class="form-check-label" for="gen-Shoujo">Shoujo</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Seinen" value="Seinen">
+                    <label class="form-check-label" for="gen-Seinen">Seinen</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Shounen" value="Shounen">
+                    <label class="form-check-label" for="gen-Shounen">Shounen</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Showbiz" value="Showbiz">
+                    <label class="form-check-label" for="gen-Showbiz">Showbiz</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-SliceOfLife"
+                        value="Slice Of Life">
+                    <label class="form-check-label" for="gen-SliceOfLife">Slice Of Life</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Space" value="Space">
+                    <label class="form-check-label" for="gen-Space">Space</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Sports" value="Sports">
+                    <label class="form-check-label" for="gen-Sports">Sports</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-StrategyGame"
+                        value="Strategy Game">
+                    <label class="form-check-label" for="gen-StrategyGame">Strategy Game</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-SuperPower"
+                        value="Super Power">
+                    <label class="form-check-label" for="gen-SuperPower">Super Power</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Supernatural"
+                        value="Supernatural">
+                    <label class="form-check-label" for="gen-Supernatural">Supernatural</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Survival" value="Survival">
+                    <label class="form-check-label" for="gen-Survival">Survival</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Suspense" value="Suspense">
+                    <label class="form-check-label" for="gen-Suspense">Suspense</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-TeamSports"
+                        value="Team Sports">
+                    <label class="form-check-label" for="gen-TeamSports">Team Sports</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-TimeTravel"
+                        value="Time Travel">
+                    <label class="form-check-label" for="gen-TimeTravel">Time Travel</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Vampire" value="Vampire">
+                    <label class="form-check-label" for="gen-Vampire">Vampire</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-VideoGame" value="Video Game">
+                    <label class="form-check-label" for="gen-VideoGame">Video Game</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-VisualArts"
+                        value="Visual Arts">
+                    <label class="form-check-label" for="gen-VisualArts">Visual Arts</label>
+                </div>
+                <div><input class="form-check-input" type="checkbox" id="gen-Workplace" value="Workplace">
+                    <label class="form-check-label" for="gen-Workplace">Workplace</label>
+                </div>
+            </div>
+        </div>
+        <button type="button" id="expandbtn" onclick="expandgenre()"
+            class="btn btn-secondary btn-sm btn-lg btn-block"><i
+                class="glyphicon glyphicon-menu-down"></i></button>
+    </div>
+    <div class="rightcard" style="display:none; border-top: 1px solid #3c3c3c;">
+        <div class="flexrightcard" id="filterplace">
+            <div class="halfleft">
+                <label for="typeselect">Stream:</label>
+                <select id="typeselect" onchange="typechange()">
+                    <option value="0">Any</option>
+                    <option value="1">GOGO Stream</option>
+                    <option value="11">AL Stream</option>
+                    <option value="6">RUSH Stream</option>
+                </select>
+            </div>
+            <div class="halfright">
+                <label for="langselect">Sub/Dub:</label>
+                <select id="langselect" onchange="langchange()">
+                    <option value="any">Any</option>
+                    <option value="sub">Sub</option>
+                    <option value="dub">Dub</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="rightcard" style="margin-bottom:20px">
+        <div class="subtitleright">Weekly Top</div>
+        <div id="ongoingplace" style="height:unset"><a href="/anime/257675">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/shingeki-no-kyojin-the-final-season-kanketsu-hen.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#1</div><span class="topanimename">Shingeki no Kyojin:
+                            The Final Season - Kanketsu-hen</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 9.03</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/269990">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/bleach-sennen-kessen-hen-ketsubetsu-tan.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#2</div><span class="topanimename">Bleach: Sennen
+                            Kessen-hen - Ketsubetsu-tan</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.99</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/255045">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/jujutsu-kaisen-tv-2nd-season.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#3</div><span class="topanimename">Jujutsu Kaisen 2nd
+                            Season</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.82</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/274490">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/bungou-stray-dogs-5th-season.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#4</div><span class="topanimename">Bungou Stray Dogs 5th
+                            Season</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.71</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/105">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/one-piece.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#5</div><span class="topanimename">One Piece</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.7</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/255895">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/mushoku-tensei-ii-isekai-ittara-honki-dasu.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#6</div><span class="topanimename">Mushoku Tensei II:
+                            Isekai Ittara Honki Dasu</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.53</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/247065">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/shiguang-dailiren-ii.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#7</div><span class="topanimename">Shiguang Dailiren
+                            II</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.32</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/247065">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/i-just-want-to-be-killed.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#8</div><span class="topanimename">I Just Want to Be
+                            Killed</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.32</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/257760">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/watashi-no-shiawase-na-kekkon.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#9</div><span class="topanimename">Watashi no Shiawase
+                            na Kekkon</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.3</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            <a href="/anime/220210">
+                <li class="topanimeli topanimea"><img
+                        src="https://icdn.bunnycdn.se/img/poster/cac_4728xx90c0/holo-no-graffiti.jpg"
+                        class="topanimeimg">
+                    <div>
+                        <div class="topanimenumber">#10</div><span class="topanimename">Holo no
+                            Graffiti</span>
+                        <div class="topanimestats">
+                            <div class="topanimerating"><i class="glyphicon glyphicon-star"></i> 8.22</div>
+                            <div class="topanimeuser"><i class="glyphicon glyphicon-stats"></i> 0</div>
+                        </div>
+                    </div>
+                </li>
+            </a>
+        </div>
+        <button type="button" id="expandbtn2" onclick="expandweekly()"
+            class="btn btn-secondary btn-sm btn-lg btn-block"><i
+                class="glyphicon glyphicon-menu-down"></i></button>
+    </div>
+</div>
